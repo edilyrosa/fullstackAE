@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 80%;
+            border-collapse: collapse;
+            border-color: rgb(103, 129, 134);
+            margin: 20px auto;
+        }
+        td{
+            padding: 10px;
+            /* todo */
+            text-align: center;
+        }
+        th{
+            background-color: rgb(96, 97, 97);
+            color: white;
+        }
+
+        .tabla-semantica tr:nth-child(even){
+            background-color: azure;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>TABLAS</h1>
+    <table border="1">
+        <caption>esta es una labla de usuarios</caption>
+        <tr><th>Nombre</th> <th>Edad</th> </tr>
+        <tr><td>Edily</td> <td>22</td> </tr>
+        <tr><td>Carlos</td> <td>20</td> </tr>
+    </table>
+
+      
+    
+    
+    
+    <table border="1" class="tabla-semantica">
+        <caption>esta es una labla de usuarios</caption>
+        <thead>
+            <tr>
+                <th>Nombre</th> 
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Edily</td> 
+                <td rowspan="2">22</td>
+            </tr>
+            <tr>
+                <td>David</td> 
+                
+            </tr>
+            <tr>
+                <td>Samuel</td> 
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>Samuel</td> 
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>Samuel</td> 
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>Samuel</td> 
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>Samuel</td> 
+                <td>30</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">voy a ocupar 2 columnas</td>
+            </tr>
+        </tfoot>
+
+  
+
+    </table>
+</body>
+</html>

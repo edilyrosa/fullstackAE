@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cuadrado{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 50px;
+            /* voy a crecer */
+            padding: 5px;
+            border: 5px solid black
+        }
+        .cuadrado-fijo{
+            width: 200px;
+            height: 200px;
+            background-color: rgb(0, 34, 255);
+            margin: 50px;
+            /* voy a crecer */
+            padding: 5px;
+            border: 5px solid black;
+            box-sizing: border-box;
+        }
+        .desbordamiento-control{
+            background-color: aquamarine;
+            overflow: hidden;
+            overflow: scroll;
+            overflow: auto;
+
+            min-width: 50%;
+            max-width: 80%;
+
+        }
+
+    </style>
+</head>
+<body>
+    <h1>MODELO DE CAJA</h1>
+    <div style="background-color: blueviolet;"> sin area fija nom tendre overflow, romare todo W y H de padre que mi contenido requiera</div>
+    <div class="cuadrado">
+        soy contenido con area fija W y H + padding y border
+    </div>
+
+    <div class="cuadrado-fijo">
+        soy contenido con area fija W y H incluiran padding y border,
+        pero voy a requerir usas box-s:border-box, porq no diseno requiere 
+        un tamano definido
+    </div>
+    <div class="cuadrado-fijo desbordamiento-control">
+        soy contenido con area fija W y H incluiran padding y border,
+        pero voy a requerir usas box-s:border-box, porq no diseno requiere 
+        un tamano definido
+        <br>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam accusantium error sint voluptatibus quaerat incidunt dolorum hic, praesentium debitis deserunt alias placeat, consectetur saepe esse repudiandae in velit accusamus est.</p>
+    </div>
+
+
+</body>
+</html>

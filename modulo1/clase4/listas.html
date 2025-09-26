@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style-type: disc;
+            list-style-type: circle;
+            list-style-type: square;
+            /* list-style-type: none; */
+        }
+        ol{
+            list-style-type: lower-roman;
+        }
+        ul, ol{
+            list-style-position: outside;
+            list-style-position: inside;
+        }
+
+        .especial{
+            list-style-type: decimal;
+        }
+    </style>
+</head>
+<body>
+    <h1>LISTAS</h1>
+
+    <ul>
+        <li>correr</li>
+        <li>programas</li>
+        <li>cantar</li>
+    </ul>
+
+    <ol start="2" reversed>
+        <li>correr</li>
+        <li>programas</li>
+        <li>cantar</li>
+    </ol>
+    <ol type="a" >
+        <li>correr</li>
+        <li>programas</li>
+        <li>cantar</li>
+    </ol>
+
+    <p>
+        Listas pueden anidarse entre sí para crear sublistas, por ejemplo, una lista dentro de un ítem de otra lista.
+    </p>
+
+    <h2>lista anidada</h2>
+    <ol class="especial">
+        <li>todo
+            <ul>
+                <li>uno</li>
+                <li>dos</li>
+                <li>dtres</li>
+            </ul>
+        </li>
+        <li>ready
+            <ol>
+                <li>cosa 1</li>
+                <li>cosa 2</li>
+                <li>cosa 3</li>
+            </ol>
+        </li>
+        <li>wanted
+           <ul>
+                <li>otra cosa</li>
+                <li>otra cosa+</li>
+           </ul>
+        </li>
+    </ol>
+
+
+    <h2>listas de definicion</h2>
+    <dl>
+        <dt>HTML:</dt>
+        <dd>lang de marcado.</dd>
+        <dt>CSS:</dt>
+        <dd>lang de presentacion .</dd>
+    </dl>
+
+</body>
+</html>

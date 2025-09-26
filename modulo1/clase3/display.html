@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <style>
+        /* div, span{
+            background-color: blue;
+            margin: 200px;
+            padding: 50px;
+            border: 1px red solid;
+        } */
+
+        .line div, div{
+            /* display:none; */
+            display:inline;
+            background-color: green;
+            border: 1px solid black;
+            margin: 5px;
+            padding: 10px;
+            
+        }
+        .block span{
+            display: block;
+            background-color: rgb(20, 10, 211);
+            border: 1px solid black;
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <h1>Display</h1>
+    <section class="line">
+        <div>Soy div de block </div>
+        <div>Soy div de block</div>
+        <div>Soy div de block </div>
+        <div>Soy div de block</div>
+    </section>
+
+    <div>soy otro</div>
+
+    <section  class="block">
+        <span>soy un span de inline</span>
+        <span>soy un span de inline</span>
+        <span>soy un span de inline</span>
+        <span>soy un span de inline</span>
+    </section>
+ 
+    <div>soy otraaaaaaaaaa</div>
+    <p>soy p</p>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section{
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            margin: 10px;
+        }
+
+        .static{
+            background-color: yellow;
+            position: static;
+            top:50px;
+            left: 50px;
+        }
+
+        .relative{
+            background-color: rgb(0, 47, 255);
+            position: relative;
+            top:50px;
+            left: 50px;
+        }
+        .absolute{
+            background-color: rgb(248, 10, 77);
+            position: absolute;
+            top:50px;
+            left: 50px;
+        }
+        .fixed{
+            background-color: rgb(10, 223, 106);
+            position: fixed;
+            top:0px;
+            left: 0px;
+        }
+        .sticky{
+            background-color: rgb(223, 10, 198);
+            position: sticky;
+            top:0px;
+            left: 0px;
+        }
+    </style>
+</head>
+<body>
+    <section class="static"> soy static</section>
+    <section class="relative"> soy relative: fondos de modales</section>
+    <section class="absolute"> soy absolute: soy bueno para saer modal</section>
+    <section class="fixed"> soy fixed: para cabeceras</section>
+    <section class="sticky"> soy sticky: warnings, asistentes</section>
+
+<article style="height: 100vh;" ></article>
+</body>
+</html>

@@ -1,0 +1,9 @@
+/* id, class, nombre de la etiqueta .... */
+h1{
+    color:red;
+    background-color: aqua;
+}
+
+.p-1{
+    font-size: 50px;
+    }

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container-flex{
+            display: flex;
+            flex-direction: row;
+            /* flex-direction: column; */
+            gap: 100px;
+            /* MUY IMPORTANTE ESTA PRO CSS */
+            flex-wrap: wrap;
+        }
+
+        p{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        p:nth-child(odd){
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container-flex">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+       
+
+    </div>
+</body>
+</html>
