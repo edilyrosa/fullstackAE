@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <img 
+src="https://placehold.co/200x100/cccccc/333333?text=Pequeña" 
+srcset="
+https://placehold.co/200x100/a395c5/ffffff?text=200w 200w, /*Indicación del ancho real de la img, 200px */
+https://placehold.co/400x200/94b4e3/ffffff?text=400w 400w,
+https://placehold.co/800x400/e66e6b/ffffff?text=800w 800w
+" 
+sizes="
+(max-width: 480px) 100vw, /* En pantallas de hasta 480px, la imagen ocupa el 100% del viewport */
+(max-width: 800px) 50vw, /* En pantallas de hasta 800px, ocupa el 50% */
+800px /* En pantallas más grandes, el ancho es de 800px */
+" 
+alt="Imagen de ejemplo responsiva"
+>
+
+
+
+<img 
+    src="https://placehold.co/200x100/cccccc/333333?text=Pequeña" 
+    srcset="
+    https://placehold.co/200x100/a395c5/ffffff?text=200w 200w,
+    https://placehold.co/400x200/94b4e3/ffffff?text=400w 400w,
+    https://placehold.co/800x400/e66e6b/ffffff?text=800w 800w
+    " 
+    sizes="
+    (max-width: 480px) 100vw, /* En pantallas de hasta 480px, la imagen ocupa el 100% del viewport */
+    (max-width: 800px) 50vw, /* En pantallas de hasta 800px, ocupa el 50% */
+    800px /* En pantallas más grandes, el ancho es de 800px */
+" 
+alt="Imagen de ejemplo responsiva"
+>
+
+    
+</body>
+</html>

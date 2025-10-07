@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input, label, section, textarea {
+            display: block;
+            padding: 10px;
+            margin: 10px;
+        }
+
+
+        /* input:focus{
+
+        } */
+    </style>
+</head>
+<body>
+    <h1>Formualrio</h1>
+    <form>
+        <input type="text" placeholder="Escribe tu nombre">
+        <label>Password
+            <input type="password">
+        </label>
+
+        <label for="id-email">Email</label>
+        <input id="id-email" type="email">
+        
+        <input type="number">
+        
+        <input 
+            placeholder="Aceota numeros de 3 en 3 desde el 5 hasta el 20"
+            type="number"
+            min="5"
+            max="20"
+            step="3"
+            >
+        <input type="date">
+            <label> una fecha entre 2024-02-25 hasta 2024-12-25 </label>
+            <input 
+            type="date" 
+            min="2024-02-25"
+            max="2024-12-25"
+            step="2"
+            >
+
+            <input type="datetime-local"> 
+            <input type="month"> 
+
+            <label>Cual es tu genero:
+                <input type="radio" name="genero" value="hombre"> Masculino 
+                <input type="radio" name="genero" value="mujer"> femenino
+            </label>
+
+            
+            <label>Cuales sabores quieres:
+                <input type="checkbox" name="sabores" value="chocolate"> Chocolate 
+                <input type="checkbox" name="sabores" value="fresa"> femfresa
+                <input type="checkbox" name="sabores" value="mantecado"> Mantecado
+            </label>
+
+            <input type="color">
+
+            <select name="pais_origen"> 
+                <option> Cual es tu pais </option>
+                <option value="Venezuela">VE</option>
+                <option value="Colombia">CO</option>
+                <option>SV</option>
+            </select>
+   
+
+            <textarea
+                placeholder="Escribe tu comentario"
+                name="comentario"
+                rows="10"
+                cols="40"
+                maxlength="300"
+                ></textarea>
+                <!--TODO: ></textarea> EXPLICAR ESTO -->
+
+        <!-- sabores = []
+        sabores.appned() -->
+
+        <!-- ?botonera del formulario  -->
+         <input type="submit" value="Enviar">
+         <button type="submit">
+            Enviar desde el bnt
+         </button>
+
+    </form>
+    
+</body>
+</html>

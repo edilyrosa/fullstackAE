@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form 
+
+      action="https://formspree.io/f/xanpokgv"
+      method="POST"
+    
+    >
+        <label>Nombre
+            <input type="text" id="nombre" name="nombre"  required>
+        </label>
+        <label>Email
+            <input type="email" id="email" name="email"  required>
+        </label>
+
+
+        <input 
+            type="image" 
+            src="https://www.clipartmax.com/png/middle/91-910699_sending-email-icon-email.png"
+            width="50" height="50" alt="Enviar"
+        >
+
+
+    </form>
+
+    <script>
+        // alert('hola' )
+        const form = document.getElementById('miFormulario')
+        form.addEventListener('submit', function(e) {
+            e.preventDefault()
+            console.log(e.target);
+            console.log(e.target);
+
+            form.style.backgroundColor = 'red'
+            const nombre = document.getElementById('nombre').value
+            const email = document.getElementById('email').value
+
+            const datosUsuario = {
+                nombre:nombre,
+                email: email
+            }
+
+            console.log('Datos del usuario desde el formulario', datosUsuario);
+            
+            form.reset()
+
+        })
+
+    </script>
+    
+</body>
+</html>
