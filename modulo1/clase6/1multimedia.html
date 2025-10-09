@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img, video, iframe{
+            display: block;
+            margin: 20px auto;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>MULTIMEDIA</h1>
+
+
+    <img  style="width: auto;" src="../assets/ancha.png" alt="esto es un paisaje" width="500" height="400">
+<!--? sizes:  Ancho que tomara la img, segun la media query.-->
+<!-- srcset la lista de URL de imgs con su w, y el nav decide cual mostrar -->
+   
+<h2>Imagen Responsiva</h2>
+
+    <img 
+        srcset=
+            "../assets/ancha.png 1300w,
+            ../assets/larga.png 612w"
+
+        sizes=
+            "(max-width: 480px) 100vw,
+            (max-width: 800px) 50vw,
+            800px"
+    >
+
+    <h2>Picture Responsiva</h2>
+<picture>
+    <source srcset="../assets/fb.jpg" media=" (max-width: 500px)" >
+    <source srcset="../assets/larga.png" media=" (min-width: 501px) and (max-width: 1000px)" >
+    <img src="../assets/ancha.png">
+</picture>
+
+ <h2>VODEO</h2>
+ <video controls autoplay loop muted width="500" height="500">
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" >
+    IMPORTANTE: Valos para kind son: subtitles y captions.
+    <track
+        kind="captions"
+        src="../assets/subtitulos_es.vtt"
+        srclang="es"
+        label="espanol"
+        default
+    >
+ </video>
+
+
+   <h2>Audio</h2>
+
+         <h2>Audio</h2>
+    <!-- <audio controls autoplay loop muted> -->
+   ? <audio controls>
+        <source src="https://www.w3schools.com/html/horse.mp3" 
+        type="audio/mpeg" 
+        preload="metadata"
+        >
+    </audio>
+
+
+    <iframe
+        src="https://www.aevirtualclass.com/"
+        width="500"
+        height="500"
+
+    ></iframe>
+
+ <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7952.519399961814!2d-74.03922385!3d4.7248920000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f855d7149daaf%3A0x62bb0234ea330481!2zQ2Vkcml0b3MsIFVzYXF1w6luLCBCb2dvdMOhLCBDb2xvbWJpYQ!5e0!3m2!1ses!2sve!4v1759883008640!5m2!1ses!2sve" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

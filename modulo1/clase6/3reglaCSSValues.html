@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+           /* TIPOS DE VALORES EN CSS */
+        .contenedor{
+            /* ===== 1. KEYWORDS (Palabras clave predefinidas) ===== */
+            /* Valores específicos que CSS reconoce sin comillas */
+            display: block; 
+            cursor: pointer; 
+            /* ===== 2. VALORES NUMÉRICOS SIN UNIDAD ===== */
+            /* Números puros sin medida, contextuales según la propiedad */
+            opacity: 0.8;          /* De 0 a 1 (transparencia) */
+            z-index: 100;          /* Número entero (apilamiento) */
+            line-height: 1.5;      /* Multiplicador relativo al font-size */
+            flex-grow: 2;          /* Factor de crecimiento en flexbox */
+         
+            /* ===== 3. UNIDADES ABSOLUTAS ===== */
+            /* Medidas fijas que NO cambian según el contexto */
+            width: 300px;                /* Píxeles (más común) */
+            border-width: 2px;           /* Píxeles para bordes */
+            margin-top: 1cm;             /* Centímetros (raro, más para impresión) */
+            padding-left: 10mm;          /* Milímetros (raro, más para impresión) */
+            font-size: 12pt;            /* Puntos (común en impresión) */
+       
+            /* ===== 4. UNIDADES RELATIVAS AL FONT-SIZE ===== */
+            /* Se calculan en base al tamaño de fuente */
+            padding: 0.5em;                /* 1em = tamaño de fuente del elemento actual */
+            margin: 2rem;                /* 1rem = tamaño de fuente del elemento raíz (html) */
+        
+            /* ===== 5. UNIDADES RELATIVAS AL VIEWPORT ===== */
+            /* Se calculan en base al tamaño de la ventana del navegador */
+            height: 100vh;               /* 100vh = 100% de la altura del viewport */
+            width: 50vw;                 /* 50vw = 50% del ancho del viewport */
+            font-size: 5vmin;            /* vmin = el menor entre vh y vw */
+            padding-top: 10vmax;         /* vmax = el mayor entre vh y vw */ 
+        
+            /* ===== 6. PORCENTAJES ===== */
+            /* Relativos al elemento padre */
+            width: 80%;                  /* 80% del ancho del contenedor padre */
+        
+          
+            /* ===== 7. COLORES - Diferentes formatos ===== */
+            /* Hexadecimal */
+            color: #3498db;              /* Notación hexadecimal de 6 dígitos */
+            border-color: #ff3399;          /* Notación hexadecimal abreviada (3 dígitos) */
+            
+            /* RGB y RGBA */
+            background-color: rgb(52, 152, 219);        /* RGB (Red, Green, Blue) */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);    /* RGBA (con canal alpha/transparencia) */
+            
+            /* HSL y HSLA */
+            outline-color: hsl(204, 70%, 53%);          /* HSL (Hue, Saturation, Lightness) */
+            text-shadow: 2px 2px hsla(0, 100%, 50%, 0.3); /* HSLA (con transparencia) */
+            
+            /* Keywords de color */
+            background: white;           /* Nombre de color predefinido */
+            border-top-color: transparent; /* Color especial (transparente) */
+        
+            /* ===== 8. FUNCIONES CSS ===== */
+            /* calc() - Operaciones matemáticas */
+            width: calc(100% - 40px);    /* Resta 40px al 100% del ancho */
+            height: calc(100vh - 5rem);  /* Combina diferentes unidades */
+            padding: calc(1em + 10px);   /* Suma diferentes tipos de medidas */
+            
+            /* min() y max() - Valores mínimos y máximos */
+            width: min(500px, 100%);     /* El menor entre 500px y 100% */
+            font-size: max(16px, 1rem);  /* El mayor entre 16px y 1rem */
+            
+            /* clamp() - Valor con límites */
+            font-size: clamp(12px, 2vw, 24px); /* Mínimo 12px, ideal 2vw, máximo 24px */
+            
+            /* var() - Variables CSS personalizadas */
+            color: var(--color-primario); /* Usa una variable CSS definida previamente */
+            margin: var(--espaciado, 20px); /* Con valor de respaldo si no existe */
+            
+            /* url() - Rutas de archivos */
+            background-image: url('imagen.jpg');        /* Ruta de imagen */
+            background-image: url("../img/fondo.png");  /* Ruta relativa con comillas */
+            cursor: url('cursor.cur'), pointer;         /* Cursor personalizado con fallback */
+            
+            /* Gradientes */
+            background: linear-gradient(to right, #3498db, #2ecc71); /* Gradiente lineal */
+            background: radial-gradient(circle, red, blue);           /* Gradiente radial */
+        
+            /* ===== 9. TEXTO ENTRE COMILLAS ===== */
+            /* Se usa para nombres con espacios o caracteres especiales */
+            font-family: "Helvetica Neue", Arial, sans-serif; /* Fuente con espacios */
+            content: "Texto generado";   /* Contenido de pseudo-elementos */
+            background-image: url("mi archivo.jpg"); /* URL con espacios en el nombre */
+            
+            
+            /* ===== 10. TEXTO SIN COMILLAS ===== */
+            /* Para nombres simples sin espacios ni caracteres especiales */
+            font-family: Arial, Verdana, sans-serif;  /* Nombres de fuentes sin espacios */
+            list-style-type: disc;       /* Valores de lista */
+            cursor: pointer;             /* Keywords del cursor */
+            
+            
+            /* ===== 11. MÚLTIPLES VALORES (Listas separadas por espacios o comas) ===== */
+            /* Separados por espacios - para un mismo contexto */
+            margin: 10px 20px 30px 40px; /* top, right, bottom, left */
+            padding: 1em 2em;            /* vertical, horizontal */
+            border: 2px solid red;       /* width, style, color */
+            
+            /* Separados por comas - para múltiples instancias */
+            font-family: "Roboto", "Open Sans", Arial, sans-serif; /* Lista de fuentes fallback */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.2); /* Múltiples sombras */
+            background-image: url('imagen1.jpg'), url('imagen2.jpg'); /* Múltiples fondos */
+            
+            
+            /* ===== 12. VALORES GLOBALES (Funcionan en cualquier propiedad) ===== */
+            /* color: inherit; */        /* Hereda el valor del padre */
+            /* display: initial; */      /* Valor inicial por defecto de la propiedad */
+            /* margin: unset; */         /* Resetea a inherit o initial según el caso */
+            /* padding: revert; */       /* Revierte al valor del user-agent stylesheet */
+            
+            /* ===== 13. TRANSFORMACIONES Y ANIMACIONES ===== */
+            transform: translate(50px, 100px) rotate(45deg) scale(1.5); /* Múltiples funciones */
+            filter: blur(5px) brightness(1.2) contrast(110%);            /* Filtros CSS */
+            transition: all 0.3s ease-in-out;  /* Propiedad, duración, función de tiempo */
+            animation: slideIn 2s infinite alternate; /* Nombre, duración, repetición, dirección */
+                    
+        }
+
+        /* ===== MEDIA QUERIES CON DIFERENTES UNIDADES ===== */
+        @media screen and (max-width: 768px) {
+        .responsive {
+            font-size: 4vw;            /* Unidad de viewport en media query */
+            padding: 5%;               /* Porcentaje en media query */
+        }
+        }
+
+
+        /* ===== GRID Y FLEXBOX CON VALORES ESPECIALES ===== */
+        .contenedor-grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;      /* fr = fracción del espacio disponible */
+        gap: 1rem;                               /* Espacio entre elementos */
+        grid-template-areas: "header header"     /* Áreas nombradas (entre comillas) */
+                            "sidebar main";
+        }
+
+        .contenedor-flex {
+        display: flex;
+        flex: 1 0 auto;              /* flex-grow, flex-shrink, flex-basis */
+        justify-content: space-between; /* Keyword de alineación */
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <p class="contenido">hola</p>
+    </div>
+</body>
+</html>

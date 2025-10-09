@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* VAMOS DE MENOR A MAYOR */
+        /* para pantallas pequenas, hasta 599 */
+        @media (max-width: 599px) {
+            body{
+                background-color: red;
+            }
+             /* TODO LO QUE LO QUIERA QUE PASE ENJ ESTA MEDIDA */
+             /* OTROS SELECTORES CON SUS REGLAS CSS */
+             div p{
+                color: green;
+             }
+             a:hover{
+                opacity: 0.9;
+             }
+        }
+        /* para pantallas medianas, entre 600 hasta 1023 */
+        @media (min-width: 600px) and (max-width: 1023px)  {
+            body{
+                background-color: rgb(192, 249, 7);
+            }
+        }
+        /* para pantallas grandes, de 1024 en adelante*/
+        @media (min-width: 1024px)  {
+            body{
+                background-color: rgb(115, 0, 255);
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Media queries</h1>
+    <p>cambia el fondo con el tamano del viewport</p>
+</body>
+</html>

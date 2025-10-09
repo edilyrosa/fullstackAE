@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+/* ===== 1. SELECTORES BÁSICOS ===== */
+
+/* Selector universal - selecciona TODOS los elementos */
+* {
+  margin: 0;
+}
+/* Selector de tipo/etiqueta - selecciona todos los elementos de ese tipo */
+p {
+  color: blue;
+}
+
+/* Selector de clase - selecciona elementos con class="nombre" */
+.mi-clase {
+  font-weight: bold;
+}
+/* Selector de ID - selecciona el elemento con id="nombre" (debe ser único) */
+#header {
+  background: white;
+}
+
+/* ===== 3. SELECTORES DE ATRIBUTO ===== */
+/* Tiene el atributo */
+[disabled] {
+  opacity: 0.5;
+}
+/* Atributo con valor exacto */
+#miFormularioSpecial [type="text"] {
+  border: 1px solid #ccc;
+}
+/* Atributo que contiene una palabra */
+[class~="destacado"] {
+  background: yellow;
+}
+/* Atributo que empieza con un valor */
+[href^="https"] {
+  color: green;  /* Enlaces HTTPS */
+}
+/* Atributo que termina con un valor */
+[src$=".pdf"] {
+  background: url('pdf-icon.png');  /* Archivos PDF */
+}
+/* Atributo que contiene un substring */
+[href*="google"] {
+  font-style: italic;  /* Enlaces que contienen "google" */
+}
+
+
+/* ===== 4. SELECTORES COMBINADORES ===== */
+/* Descendiente - selecciona elementos dentro de otro (cualquier nivel) */
+div p {
+  margin: 10px;  /* Todos los <p> dentro de <div> */
+}
+/* Hijo directo - solo hijos inmediatos */
+nav ul > li {
+  list-style: none;  /* Solo <li> hijos directos de <ul> */
+}
+/* ===== HERNANOS ===== */
+/* Hermano adyacente - elemento inmediatamente siguiente */
+h2 + p {
+  font-weight: bold;  /* El <p> que viene justo después de <h2> */
+}
+/* Hermanos generales - todos los hermanos siguientes */
+h2 ~ p {
+  color: gray;  /* Todos los <p> que siguen a <h2> */
+}
+
+/* ===== 5. PSEUDO-CLASES DE ESTADO ===== */
+/* Estado hover - cuando el cursor está encima */
+a:hover {
+  text-decoration: underline;
+}
+/* Estado focus - cuando el elemento tiene foco */
+input:focus {
+  border-color: blue;
+}
+/* Estado active - mientras se hace clic */
+button:active {
+  transform: scale(0.95);
+}
+/* Estado visited - enlaces ya visitados */
+a:visited {
+  color: purple;
+}
+/* Estado checked - inputs marcados */
+input:checked {
+  accent-color: green;
+}
+/* Estado disabled - elementos deshabilitados */
+button:disabled {
+  cursor: not-allowed;
+}
+/* Estado enabled - elementos habilitados */
+input:enabled {
+  background: white;
+}
+
+/* ===== 6. PSEUDO-CLASES ESTRUCTURALES ===== */
+/* Primer hijo */
+li:first-child {
+  font-weight: bold;
+}
+
+/* Último hijo */
+li:last-child {
+  border-bottom: none;
+}
+
+/* Único hijo */
+p:only-child {
+  text-align: center;
+}
+
+/* Enésimo hijo - n puede ser número, odd, even, fórmulas */
+li:nth-child(2) {
+  color: red;  /* El segundo <li> */
+}
+
+li:nth-child(odd) {
+  background: #f0f0f0;  /* Impares: 1, 3, 5... */
+}
+
+li:nth-child(even) {
+  background: white;  /* Pares: 2, 4, 6... */
+}
+
+li:nth-child(3n) {
+  color: blue;  /* Múltiplos de 3: 3, 6, 9... */
+}
+
+li:nth-child(3n+1) {
+  color: green;  /* 1, 4, 7, 10... */
+}
+
+/* Enésimo hijo desde el final */
+li:nth-last-child(2) {
+  font-style: italic;  /* El penúltimo */
+}
+/* Enésimo del mismo tipo */
+p:nth-of-type(2) {
+  margin-top: 20px;  /* El segundo <p> (ignora otros elementos) */
+}
+
+/* Primer/último de su tipo */
+p:first-of-type {
+  font-size: 1.2em;
+}
+
+p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Único de su tipo */
+img:only-of-type {
+  display: block;
+  margin: 0 auto;
+}
+
+/* ===== 7. PSEUDO-CLASES DE NEGACIÓN Y VALIDACIÓN ===== */
+/* NOT - excluye elementos que coinciden con el selector */
+button:not(.primario) {
+  background: gray;  /* Todos los botones excepto los con clase "primario" */
+}
+input:not([type="submit"]) {
+  width: 100%;  /* Todos los inputs excepto los submit */
+}
+
+/* Validación de formularios */
+input:valid {
+  border-color: green;
+}
+
+input:invalid {
+  border-color: red;
+}
+
+input:required {
+  border-left: 3px solid orange;
+}
+
+input:optional {
+  opacity: 0.8;
+}
+
+input:in-range {
+  background: lightgreen;  /* Valor dentro del rango min/max */
+}
+
+input:out-of-range {
+  background: lightcoral;  /* Valor fuera del rango */
+}
+
+/* ===== 8. PSEUDO-CLASES DE CONTENIDO ===== */
+
+/* Elemento vacío */
+div:empty {
+  display: none;
+}
+
+/* Contiene texto específico (no estándar en todos los navegadores) */
+p:contains("importante") {
+  font-weight: bold;
+}
+
+/* ===== 9. PSEUDO-ELEMENTOS ===== */
+
+/* Before - inserta contenido antes del elemento */
+p::before {
+  content: "→ ";
+  color: blue;
+}
+
+/* After - inserta contenido después del elemento */
+p::after {
+  content: " ✓";
+  color: green;
+}
+
+/* First-letter - primera letra */
+p::first-letter {
+  font-size: 2em;
+  float: left;
+}
+
+/* First-line - primera línea */
+p::first-line {
+  font-weight: bold;
+}
+/* Selection - texto seleccionado por el usuario */
+::selection {
+  background: yellow;
+  color: black;
+}
+
+/* Placeholder - texto de marcador de posición */
+input::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* Marker - marcador de listas */
+li::marker {
+  color: red;
+  font-size: 1.2em;
+}
+/* ===== 10. SELECTORES MÚLTIPLES ===== */
+
+/* Agrupar selectores - aplica las mismas reglas a varios */
+h1, h2, h3 {
+  font-family: Arial, sans-serif;
+}
+
+.error, .warning, .info {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+
+/* ===== 11. SELECTORES AVANZADOS COMBINADOS ===== */
+
+/* Múltiples clases */
+.boton.primario {
+  background: blue;  /* Elemento que tiene AMBAS clases */
+}
+
+/* Clase y atributo */
+a.externo[target="_blank"] {
+  padding-right: 20px;
+}
+
+/* Combinación compleja */
+nav > ul > li:first-child > a:hover {
+  color: red;
+}
+/* Pseudo-clase con pseudo-elemento */
+a:hover::after {
+  content: " →";
+}
+
+
+/* ===== 12. PSEUDO-CLASES DE ENLACE Y USUARIO ===== */
+
+/* Enlace no visitado */
+a:link {
+  color: blue;
+}
+
+/* Target - elemento con ID que coincide con el fragmento de URL */
+:target {
+  background: yellow;  /* Elemento con id="#seccion" cuando URL es pagina.html#seccion */
+}
+
+/* Lang - elementos en un idioma específico */
+:lang(es) {
+  quotes: "«" "»";
+}
+
+:lang(en) {
+  quotes: """ """;
+}
+
+/* ===== 13. PSEUDO-CLASES DE ROOT Y SCOPE ===== */
+
+/* Root - elemento raíz del documento (siempre <html>) */
+:root {
+  --color-primario: #3498db;  /* Ideal para variables CSS */
+  font-size: 16px;
+}
+
+/* Scope - elemento en el contexto actual */
+:scope {
+  border: 2px solid red;
+}
+
+
+/* ===== 14. SELECTORES IS, WHERE, HAS (Modernos) ===== */
+
+/* :is() - coincide con cualquiera de los selectores (con especificidad) */
+:is(h1, h2, h3):hover {
+  color: blue;  /* Cualquier título al hover */
+}
+
+/* :where() - igual que :is() pero SIN especificidad */
+:where(article, section) p {
+  line-height: 1.6;
+}
+
+/* :has() - selector padre (tiene un descendiente que coincide) */
+/*Selecciona el DIV (padre), Aplica estilos AL DIV que contiene una imagen  */
+div:has(> img) {
+  border: 1px solid gray;  /* <div> que contiene una <img> */
+}
+/* diferente a -> div > img {} que Selecciona la IMG (hijo) */
+
+article:has(h2) {
+  padding-top: 20px;  /* <article> que contiene un <h2> */
+}
+
+/* ===== 15. ESPECIFICIDAD - Ejemplos de combinación ===== */
+
+/* Baja especificidad */
+p {
+  color: black;
+}
+
+/* Media especificidad */
+.texto p {
+  color: blue;
+}
+
+/* Alta especificidad */
+#contenido .texto p {
+  color: red;
+}
+
+/* Muy alta especificidad */
+body #contenido .texto p.destacado {
+  color: green;
+}
+
+/* Máxima especificidad (evitar) */
+p#mi-parrafo.destacado[data-importante="true"] {
+  color: purple;
+}
+
+/* !important - sobrescribe todo (usar con cuidado) */
+p {
+  color: orange !important;
+}
+
+    </style>
+</head>
+<body>
+    
+  <nav>
+    <ul>
+      <li>inicio</li>
+      <li>nosotros</li>
+    </ul>
+  </nav>
+
+  lista de paises 
+  <ul>
+    <li>VE</li>
+    <li>co</li>
+  </ul>
+</body>
+</html>
